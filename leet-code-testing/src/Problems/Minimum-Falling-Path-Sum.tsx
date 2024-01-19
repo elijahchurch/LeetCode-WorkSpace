@@ -25,6 +25,14 @@ export const lowestNumAndIndex = (numArray: number[], indexLocation : number) =>
             lowestNum = numArray[1];
             nextIndex = 1;
         }   
+    } else if(indexLocation === (numArray.length - 1)) {
+        if(numArray[indexLocation - 1] < numArray[indexLocation]) {
+            lowestNum = numArray[indexLocation -1];
+            nextIndex = indexLocation - 1;
+        } else {
+            lowestNum = numArray[indexLocation];
+            nextIndex = indexLocation;
+        }
     }
     return [lowestNum, nextIndex];
 }

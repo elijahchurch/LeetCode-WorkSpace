@@ -21,5 +21,11 @@ describe("minFallingPathSum and helper functions", () => {
         expect(result).toEqual([2,1]);
     })
 
+    test("lowestNumAndIndex should correctly return the lowestNum and Index when initalIndex input matches the last index position of numArray input", () => {
+        const testArray = [4,2,6,7,0];
+        const result = lowestNumAndIndex(testArray, 4);
+        expect(result).toEqual([0,4]);
+    })
+
 
 });
