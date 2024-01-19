@@ -15,8 +15,8 @@ export const minFallingPathSum = (matrix: number[][]): number => {
 } 
 
 export const lowestNumAndIndex = (numArray: number[], indexLocation : number) => {
-    let lowestNum: number;
-    let nextIndex: number;
+    let lowestNum: number = 0;
+    let nextIndex: number = 0;
     if(indexLocation === 0) {
         if(numArray[0] < numArray[1]) {
             lowestNum = numArray[0];
@@ -32,6 +32,16 @@ export const lowestNumAndIndex = (numArray: number[], indexLocation : number) =>
         } else {
             lowestNum = numArray[indexLocation];
             nextIndex = indexLocation;
+        }
+    } else {
+        for(let i = indexLocation -1; i <= indexLocation + 1; i++) {
+            if(i === indexLocation -1) {
+                lowestNum = numArray[i];
+                nextIndex = i;
+            } else if(numArray[i] < lowestNum) {
+                lowestNum = numArray[i];
+                nextIndex = i;
+            }
         }
     }
     return [lowestNum, nextIndex];
