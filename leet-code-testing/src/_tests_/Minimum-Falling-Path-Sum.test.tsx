@@ -1,4 +1,4 @@
-import { minFallingPathSum } from "../Problems/Minimum-Falling-Path-Sum";
+import { lowestNumAndIndex, minFallingPathSum } from "../Problems/Minimum-Falling-Path-Sum";
 
 describe("minFallingPathSum and helper functions", () => {
 
@@ -14,6 +14,12 @@ describe("minFallingPathSum and helper functions", () => {
         expect(firstElement).toEqual([[1]]);
         expect(testArray).toEqual([[2]]);
     });
+
+    test("lowestNumAndIndex should correctly return the lowestNum and Index when initalIndex input is 0", () => {
+        const testArray = [4,2,6,7,0];
+        const result = lowestNumAndIndex(testArray, 0);
+        expect(result).toEqual([2,1]);
+    })
 
 
 });
