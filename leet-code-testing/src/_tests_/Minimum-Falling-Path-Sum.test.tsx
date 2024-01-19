@@ -33,5 +33,11 @@ describe("minFallingPathSum and helper functions", () => {
         expect(result).toEqual([2,1]);
     })
 
+    test("minFallingPathSum should successfully loop through entire matrix and return lowest sum", () => {
+        const testArray = [[0,1,-1,4], [0,1,2,3], [40, -38, -48, 36]];
+        const result = minFallingPathSum(testArray);
+        expect(result).toEqual(-48);
+    })
+
 
 });

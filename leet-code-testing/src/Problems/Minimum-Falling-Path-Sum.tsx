@@ -1,7 +1,7 @@
 export const minFallingPathSum = (matrix: number[][]): number => {
     const firstElement: number[][] = matrix.splice(0,1);
-    let sum: number;
-    let indexLocation: number;
+    let sum: number = 0;
+    let indexLocation: number = 0;
     firstElement[0].forEach((element, index) => {
         if(index === 0){
             sum = element;
@@ -11,7 +11,12 @@ export const minFallingPathSum = (matrix: number[][]): number => {
                 indexLocation = index;
         }
     });
-    return 0;
+    matrix.forEach((element) => {
+        const lowestData = lowestNumAndIndex(element, indexLocation);
+        sum += lowestData[0];
+        indexLocation = lowestData[1];
+    })
+    return sum;
 } 
 
 export const lowestNumAndIndex = (numArray: number[], indexLocation : number) => {
