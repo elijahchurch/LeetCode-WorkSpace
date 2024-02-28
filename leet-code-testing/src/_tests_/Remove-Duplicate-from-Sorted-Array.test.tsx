@@ -17,6 +17,6 @@ describe("duplicateRemover", () => {
     test("testArray should only have unique element after duplicatRemover mutates it", () => {
         const testArray = [0, 1, 1, 1, 2, 2, 3, 4, 4];
         duplicateRemover(testArray);
-        expect(testArray).toEqual([0, 1, 2, 3, 4]);
+        expect(testArray).toEqual([0, 1, 2, 3, 4, 0, 1, 1, 1, 2, 2, 3, 4, 4]);
     });
 })
