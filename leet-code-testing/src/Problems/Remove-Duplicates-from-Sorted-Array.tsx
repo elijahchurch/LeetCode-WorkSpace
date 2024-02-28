@@ -11,6 +11,10 @@ export function duplicateRemover(nums: number[]): number{
         if(nums.indexOf(element) === index || (nums.indexOf(element) + 1) === index) {
             count += 1;
         }
-    })
+        else {
+            nums[index] = 999.99;
+        }
+    });
+    nums.sort((a,b) => a-b);
     return count;
 }

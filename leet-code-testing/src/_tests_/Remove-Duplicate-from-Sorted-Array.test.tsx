@@ -14,6 +14,12 @@ describe("duplicateRemover", () => {
         expect(result).toEqual(8);
     })
 
+    test("testArray should unique element and doubles at front", () => {
+            const testArray = [0, 1, 1, 1, 2, 2, 3, 4, 4];
+            duplicateRemover(testArray);
+            expect(testArray).toEqual([0, 1, 1, 2, 2, 3, 4, 4, 999.99]);
+        });
+
     //  These tests are commented out because they were for part I of the problem:
 
     // test("duplicateRemover should loop through num array and remove duplicates", () => {
