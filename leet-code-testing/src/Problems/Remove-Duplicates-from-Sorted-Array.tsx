@@ -6,5 +6,14 @@
 // Return k.
 
 export function duplicateRemover(nums: number[]): number{
-    return 3;
+    let count: number = 0;
+    let duplicatesToRemove: number[] = [];
+    nums.forEach((element, index) => {
+        if(nums.indexOf(element) === index) {
+            count +=1
+        } else {
+            duplicatesToRemove.push(index);
+        }
+    })
+    return count;
 }

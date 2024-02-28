@@ -7,5 +7,10 @@ describe("duplicateRemover", () => {
         const result = typeof number;
         expect(result).toEqual("number");
     });
-    
+
+    test("duplicateRemover should loop through num array and remove duplicates", () => {
+        const testArray = [0,1,1,1,2,2,3,4,4];
+        const result = duplicateRemover(testArray);
+        expect(result).toEqual(5);
+    })
 })
