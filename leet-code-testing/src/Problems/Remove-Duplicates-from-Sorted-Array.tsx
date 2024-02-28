@@ -7,15 +7,10 @@
 
 export function duplicateRemover(nums: number[]): number{
     let count: number = 0;
-    let uniqueNums: number[] = [];
     nums.forEach((element, index) => {
-        if(nums.indexOf(element) === index) {
+        if(nums.indexOf(element) === index || (nums.indexOf(element) + 1) === index) {
             count += 1;
-            uniqueNums.push(element);
         }
-    })
-    uniqueNums.reverse().forEach((element) => {
-        nums.unshift(element);
     })
     return count;
 }

@@ -8,15 +8,23 @@ describe("duplicateRemover", () => {
         expect(result).toEqual("number");
     });
 
-    test("duplicateRemover should loop through num array and remove duplicates", () => {
+    test("duplicateRemover should return the count of how many unique or double elements there are", () => {
         const testArray = [0, 1, 1, 1, 2, 2, 3, 4, 4];
         const result = duplicateRemover(testArray);
-        expect(result).toEqual(5);
+        expect(result).toEqual(8);
     })
 
-    test("testArray should only have unique element after duplicatRemover mutates it", () => {
-        const testArray = [0, 1, 1, 1, 2, 2, 3, 4, 4];
-        duplicateRemover(testArray);
-        expect(testArray).toEqual([0, 1, 2, 3, 4, 0, 1, 1, 1, 2, 2, 3, 4, 4]);
-    });
+    //  These tests are commented out because they were for part I of the problem:
+
+    // test("duplicateRemover should loop through num array and remove duplicates", () => {
+    //     const testArray = [0, 1, 1, 1, 2, 2, 3, 4, 4];
+    //     const result = duplicateRemover(testArray);
+    //     expect(result).toEqual(5);
+    // })
+
+    // test("testArray should only have unique element after duplicatRemover mutates it", () => {
+    //     const testArray = [0, 1, 1, 1, 2, 2, 3, 4, 4];
+    //     duplicateRemover(testArray);
+    //     expect(testArray).toEqual([0, 1, 2, 3, 4, 0, 1, 1, 1, 2, 2, 3, 4, 4]);
+    // });
 })
